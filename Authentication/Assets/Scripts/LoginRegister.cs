@@ -1,19 +1,24 @@
 using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
+using TMPro;
+
 
 public class LoginRegister : MonoBehaviour
 {
-    void Start()
+    public TMP_InputField usernameInput;
+    public TMP_InputField passwordInput;
+
+    public TextMeshProUGUI displayText;
+
+    public void OnRegister()
     {
-        string username = "TestUser";
-        string password = "password1";
 
         var registerRequest = new RegisterPlayFabUserRequest
         {
-            Username = username,
-            DisplayName = username,
-            Password = password,
+            Username = usernameInput.text,
+            DisplayName = usernameInput.text,
+            Password = passwordInput.text,
             RequireBothUsernameAndEmail = false
         };
 
