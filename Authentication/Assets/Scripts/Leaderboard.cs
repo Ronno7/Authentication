@@ -9,10 +9,14 @@ public class Leaderboard : MonoBehaviour
     public GameObject[] leaderboardEntries;
 
     public static Leaderboard instance;
-    void Awake() { instance = this; }
+    void Awake() 
+    {
+        instance = this;
+    }
+
     public void OnLoggedIn()
     {
-        leaderboardCanvas.SetActive(false);
+        //leaderboardCanvas.SetActive(t);
         DisplayLeaderboard();
     }
 
