@@ -187,37 +187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91bddd602a1e5ef4896cec38e5493d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tradeCanvas: {fileID: 0}
-  inventoryText: {fileID: 0}
-  inventory: []
-  catalog: []
-  onRefreshUI:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -4583570748493226616}
-        m_TargetAssemblyTypeName: TradeItem, Assembly-CSharp
-        m_MethodName: GetInventory
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -4583570748493226616}
-        m_TargetAssemblyTypeName: TradeItem, Assembly-CSharp
-        m_MethodName: GetCatalog
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  itemName: 
+  value: 0
+  displayText: {fileID: 3498537391045514354}
 --- !u!1 &2884100616149362559
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +446,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4567354411019245061}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -4583570748493226616}
+        m_TargetAssemblyTypeName: TradeItem, Assembly-CSharp
+        m_MethodName: OnRemoveItemButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6290190697993217614
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,4 +715,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5404906382337024351}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -4583570748493226616}
+        m_TargetAssemblyTypeName: TradeItem, Assembly-CSharp
+        m_MethodName: OnAddItemButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

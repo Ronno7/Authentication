@@ -1,38 +1,41 @@
-using PlayFab;
-using PlayFab.ClientModels;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class TradeItem : MonoBehaviour
 {
-    public GameObject tradeCanvas;
-    public TextMeshProUGUI inventoryText;
-    [HideInInspector]
-    public List<ItemInstance> inventory;
-    [HideInInspector]
-    public List<CatalogItem> catalog;
+    public string itemName;
+    public int value;
+    public TextMeshProUGUI displayText;
 
-    public static TradeItem instance;
-    void Awake() { instance = this; }
-
-    public UnityEvent onRefreshUI;
-
-    public void OnLoggedIn()
+    void Start()
     {
-        tradeCanvas.SetActive(true);
-        if (onRefreshUI != null)
-            onRefreshUI.Invoke();
+        UpdateDisplayText();
     }
 
-    public void GetInventory()
+    void UpdateDisplayText()
     {
-
+        if (displayText != null)
+            displayText.text = $"{itemName} ({value})";
     }
 
-    public void GetCatalog()
+    public void OnAddItemButton()
     {
+        value++;
+        UpdateDisplayText();
+    }
 
+    public void OnRemoveItemButton()
+    {
+        if (value > 0)
+        {
+            value--;
+            UpdateDisplayText();
+        }
+    }
+
+    public void ResetValue()
+    {
+        value = 0;
+        UpdateDisplayText();
     }
 }
